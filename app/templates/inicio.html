@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% block content %}
+	<header id="inicio">
+		<h1 class="titulo neuton">Apps and Play</h1>
+	</header>
+	<nav class="menu">
+		<ul class="list center-block wrap">
+			<li class="item">
+				<a href="{% url 'inicio' %}">Inicio</a>
+			</li>
+			<li class="item">
+				<a href="#apps">Apps</a>
+			</li>
+			<li class="item">
+				<a href="#nosotros">Nosotros</a>
+			</li>
+		</ul>
+	</nav>
+	<section class="wrapper">
+	<section id="miSlide" class="carousel slide fullScreen">
+        <ol class="carousel-indicators">
+            <li data-target="#miSlide" data-slide-to="0" class="active"></li>
+            <li data-target="#miSlide" data-slide-to="1"></li>
+            <li data-target="#miSlide" data-slide-to="2"></li>
+            <li data-target="#miSlide" data-slide-to="3"></li>
+            <li data-target="#miSlide" data-slide-to="4"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="{% static 'img/slider_1.jpg' %}" class="adaptar">
+            </div>
+            <div class="item">
+                <img src="{% static 'img/slider_2.jpg' %}" class="adaptar">
+            </div>
+            <div class="item">
+                <img src="{% static 'img/slider_3.jpg' %}" class="adaptar">
+            </div>
+            <div class="item">
+                <img src="{% static 'img/slider_5.jpg' %}" class="adaptar">
+            </div>
+            <div class="item">
+                <img src="{% static 'img/slider_6.jpg' %}" class="adaptar">
+            </div>
+        </div>
+
+        <a href="#miSlide" class="left carousel-control" data-slide="prev">
+          	<span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#miSlide" class="right carousel-control" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </section>
+
+    <section id="apps" class="apps_play">
+    {% for app in apps %}
+
+        <article class="row app">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <img src="{{MEDIA_URL}}{{ app.imagen }}" class="img-responsive imagen_app">
+                    </div>
+                    <div class="col-xs-10">
+                        <h2>{{ app.titulo }}</h2>
+                        <p>{{ app.detalle }}</p>
+                        <a href="{{ app.url }}" class="btn btn-danger">Descargar</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    {% endfor %}
+    </section>
+
+    <section id="nosotros" class="equipo">
+        {% for nos in nosotros %}
+            <div class="nosotros">
+                <h2 class="center pacifico">Nosotros</h2>
+                <p>{{ nos.nosotros }}</p>
+            </div>
+            <div class="mision">
+                <h2 class="center pacifico">Mision</h2>
+                <p>{{ nos.mision }}</p>
+            </div>
+            <div class="vision">
+                <h2 class="center pacifico">Vision</h2>
+                <p>{{ nos.vision }}</p>
+            </div>
+        {% endfor %}
+
+        <h2 class="center pacifico equipo_h2">Equipo</h2>
+        
+        {% for  equipo in equipos %}
+            <article class="row">
+                <div class="descripcion">
+                    <div class="avatar">
+                        <img src="{{MEDIA_URL}}{{ equipo.avatar }}">
+                    </div>
+
+                    <div class="detalle">
+                        <h3 class="nombre">{{ equipo.nombre }}</h3>
+                        <p class="frase">{{ equipo.frase }}</p>
+                    </div>
+
+                </div>
+                <div class="info">
+                    <p class="cargo">{{ equipo.cargo }}</p>
+                    <a class="face" href="{{ equipo.facebook }}"></a>
+                    {% if equipo.twitter %}
+                        <a class="twitter" href="{{ equipo.twitter }}"></a>
+                    {% endif %}
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+    </section>
+    <footer>
+        <strong>Apps and Play @2015</strong>
+    </footer>
+{% endblock content %}

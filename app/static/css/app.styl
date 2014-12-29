@@ -1,0 +1,156 @@
+gris_oscuro = #333333
+gris_claro = #818181
+rojo = #BD255B
+gris_mas_claro = #F0F0F0
+azul_pastel_claro = #037E8C
+
+@font-face {
+	font-family: 'redes_sociales';
+	src:url('../fonts/icomoon.eot?-7kv8wl');
+	src:url('../fonts/icomoon.eot?#iefix-7kv8wl') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-7kv8wl') format('woff'),
+		url('../fonts/icomoon.ttf?-7kv8wl') format('truetype'),
+		url('../fonts/icomoon.svg?-7kv8wl#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body
+	font-size 16px
+	font-family 'Neuton', serif
+
+footer
+	background black
+	color gris_claro
+	font-size 1.5em
+	text-align center
+	margin 1em 0 0 0
+	padding 1em
+	
+header
+	background white
+	.titulo
+		text-align center
+.apps_play
+	background gris_mas_claro	
+	
+	.app
+		background gris_mas_claro
+		color gris_claro
+		margin 5em 2em 3em 2em
+		padding 1em 0 1em 0
+		box-shadow 2px 2px 10px rgba(black, 0.5)
+		border-radius 3px
+		
+		.imagen_app
+			width 175px
+			height 175px
+			border-radius 5px
+			box-shadow 2px 2px 10px rgba(black, 0.1)
+		
+.center
+	text-align center
+	margin 0 0 1em 0		
+.center-block
+	margin 0 auto
+
+.equipo
+	padding 2em
+	position relative
+	background gris_mas_claro
+	
+	article
+		background gris_mas_claro
+		box-shadow 2px 2px 10px rgba(black, 0.7)
+		color negro
+		width 48%
+		display inline-block
+		vertical-align top
+		margin 0 0 1em 1em
+		
+		.descripcion
+			display inline-block
+			
+			.avatar
+				float left
+				img
+					width 10em
+					height 10em
+					vertical-align top
+					box-shadow 2px 2px 10px rgba(black, 0.5)
+					
+			.detalle
+				height 160px
+				margin-left 130px
+				
+				.nombre
+					margin 0.5em 0 2em 9em
+				.frase
+					
+					margin 2em 0 0 60%
+		.info
+			background azul_pastel_claro
+			display block
+			overflow hidden
+			
+			.cargo
+				float left
+
+			.face
+				float right
+				margin .4em 1.1em 0 0
+								
+				&:after
+					content "\ea8d"
+					font-family 'redes_sociales'
+					color #129EFF
+			
+			.twitter
+				float right
+				margin .4em 1.1em 0 0
+								
+				&:after
+					content "\ea92"
+					font-family 'redes_sociales'
+					color #2BA6E8
+.fullScreen
+	width 100%
+	height 100%
+	padding 0
+	margin 0
+.list
+	list-style none
+.menu
+	display block
+	background gris_mas_claro
+	overflow hidden
+	border-top 3px solid gris_claro
+	.item
+		float left
+		list-style none
+		a
+			color gris_oscuro
+			cursor pointer
+			display block
+			padding 1em
+			text-transform uppercase
+			text-decoration none
+			border-top 5px solid transparent
+			transition .3s border-top
+			&:hover
+				border-top 5px solid gris_claro
+	
+.neuton
+	font-family 'Neuton', serif
+	font-size 4em
+.nosotros
+	text-align center
+	font-size 1.2em	
+.pacifico
+	font-family 'Pacifico', cursive
+	margin .5em 0 0.5em 0			
+.wrap
+	width 1000px
+
+.wrapper
+	background gris_mas_claro
