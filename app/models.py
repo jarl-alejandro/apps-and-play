@@ -16,7 +16,7 @@ class Equipo(models.Model):
 	frase = models.CharField(max_length = 140)
 	avatar = models.ImageField(upload_to = 'avatar')
 	facebook = models.CharField(max_length = 140, default = '')
-	twitter = models.CharField(max_length = 140, default = '')
+	twitter = models.CharField(max_length = 140, default = '', blank = True)
 
 	def __unicode__(self):
 		return "%s (%s)" % (self.nombre, self.cargo)
