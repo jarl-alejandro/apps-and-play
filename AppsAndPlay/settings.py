@@ -53,16 +53,20 @@ ROOT_URLCONF = 'AppsAndPlay.urls'
 
 WSGI_APPLICATION = 'AppsAndPlay.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}
+}"""
+import dj_database_url
+
+DATABASES = {'default': dj_database_url.parse('postgres://rnnqharefolxch:XIpLnLrMkm8h-tLMmI5kyCnWvJ@ec2-54-83-23-169.compute-1.amazonaws.com:5432/d8jebe8ab2q7kr')}
+
+DATABASES['default'] =  dj_database_url.config()
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -92,8 +96,3 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
-import dj_database_url
-
-DATABASES = {'default': dj_database_url.parse('')}
-
-DATABASES['default'] =  dj_database_url.config()
